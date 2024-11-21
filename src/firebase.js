@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAGDvsbvrCyNDBiwL5sdDlypmOozyRL8Ho",
-  authDomain: "phdtracker-4c028.firebaseapp.com",
-  projectId: "phdtracker-4c028",
-  storageBucket: "phdtracker-4c028.firebasestorage.app",
-  messagingSenderId: "887481722405",
-  appId: "1:887481722405:web:f79191988b5d4a2e7441cc",
-  measurementId: "G-BSXGQK6YKX"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
