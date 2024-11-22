@@ -54,7 +54,7 @@ const Dashboard = () => {
       <h2>Что я сделал?😉</h2>
       <EntryForm />
       <EntryTable />
-      <Button variant="primary" className="mt-3" onClick={generateReport}>
+      <Button variant="primary" className="mt-3 mb-3" onClick={generateReport}>
         Сгенерировать отчет!📚
       </Button>
     </Container>

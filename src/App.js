@@ -9,6 +9,7 @@ import AppNavbar from "./components/Navbar";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import Dashboard from "./components/Main/Dashboard";
+import Footer from "./components/Footer";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { Spinner, Container } from "react-bootstrap";
@@ -39,21 +40,24 @@ const App = () => {
 
   return (
     <Router>
-      {user && <AppNavbar user={user} />}
-      <Routes>
-        <Route
-          path="/login"
-          element={!user ? <Login /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/register"
-          element={!user ? <Register /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/"
-          element={user ? <Dashboard /> : <Navigate to="/login" />}
-        />
-      </Routes>
+      <div class="d-flex flex-column min-vh-100">
+        {user && <AppNavbar user={user} />}
+        <Routes>
+          <Route
+            path="/login"
+            element={!user ? <Login /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/register"
+            element={!user ? <Register /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/"
+            element={user ? <Dashboard /> : <Navigate to="/login" />}
+          />
+        </Routes>
+        {user && <Footer />}
+      </div>
     </Router>
   );
 };
